@@ -2,10 +2,14 @@
   "name": "oauth_api",
   "version": "1.0.0",
   "description": "Test task for goodbits tech",
-  "main": "src/index.js",
+  "main": "src",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "test": "jest",
+    "start": "node ."
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js"
   },
   "author": "arjupba@gmail.com",
   "license": "ISC",
