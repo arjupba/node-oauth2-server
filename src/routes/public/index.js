@@ -1,12 +1,16 @@
 import { Router } from 'express';
 
 import path from 'path';
-const router = Router();
+const router = new Router();
 
 router.get('/', (req, res) =>
   res.sendFile(
     path.join(__dirname, '../public/clientAuthenticate.html'),
   ),
+);
+
+router.get('/registerUser', (req, res) =>
+  res.sendFile(path.join(__dirname, '../public/registerUser.html')),
 );
 
 router.get('/oauth', (req, res) =>

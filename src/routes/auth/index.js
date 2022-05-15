@@ -2,7 +2,7 @@ import { Router } from 'express';
 import oAuthServer from '../../oauthServer';
 import { authenticateUser } from '../../models/users';
 
-const router = Router();
+const router = new Router();
 
 router.post(
   '/authorize',

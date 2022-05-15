@@ -2,9 +2,14 @@
   "name": "oauth_api",
   "version": "1.0.0",
   "description": "Test task for goodbits tech",
-  "main": "src/index.js",
+  "main": "src",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node ."
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js"
   },
   "author": "arjupba@gmail.com",
   "license": "ISC",
@@ -23,10 +28,13 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^20.0.3",
     "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
-    "nodemon": "^2.0.16"
+    "jest-cli": "^20.0.4",
+    "nodemon": "^2.0.16",
+    "supertest": "^3.0.0"
   }
 }
