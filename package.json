@@ -28,10 +28,13 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^20.0.3",
     "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
-    "nodemon": "^2.0.16"
+    "jest-cli": "^20.0.4",
+    "nodemon": "^2.0.16",
+    "supertest": "^3.0.0"
   }
 }

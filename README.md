@@ -10,3 +10,7 @@
 6. Click 'login with oauth server' button to redirect to the login page
 7. Enter username and password in the proper text box and press login button.
 8. Press get access token button to access secured api.
+
+## Test
+
+Run `npm run test` to test
