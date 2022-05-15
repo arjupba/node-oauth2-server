@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import path from 'path';
-const router = Router();
+const router = new Router();
 
 router.get('/', (req, res) =>
   res.sendFile(

@@ -3,7 +3,7 @@ import { middleware as body } from 'bodymen';
 import oAuthServer from '../../oauthServer';
 import { createUser, getUsers } from '../../models/users';
 
-const router = Router();
+const router = new Router();
 
 router.get('/', oAuthServer.authenticate(), (req, res) => {
   return res.send({ ok: true, users: getUsers() });
