@@ -9,6 +9,10 @@ router.get('/', (req, res) =>
   ),
 );
 
+router.get('/registerUser', (req, res) =>
+  res.sendFile(path.join(__dirname, '../public/registerUser.html')),
+);
+
 router.get('/oauth', (req, res) =>
   res.sendFile(
     path.join(__dirname, '../public/oauthAuthenticate.html'),

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Client Authenticate</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="container">
+    <h1>Sign Up</h1>
+    <form onsubmit="useThisToken()" id="formId">
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          class="form-control auth"
+          type="text"
+          name="name"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          class="form-control auth"
+          type="text"
+          name="userName"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          class="form-control auth"
+          type="text"
+          name="password"
+          value=""
+        />
+      </div>
+      <input
+        type="button"
+        class="btn btn-success"
+        onclick="registerUser()"
+        value="Sign Up"
+      />
+    </form>
+    <p id="response"></p>
+    <a href="http://localhost:3006/public/" class="btn btn-primary"
+      >Login</a
+    >
+  </body>
+  <script>
+    function registerUser(data) {
+      const elements = document.getElementById('formId').elements;
+      const name = elements.name.value;
+      const userName = elements.userName.value;
+      const password = elements.password.value;
+      fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ name, userName, password }),
+        headers: {
+          'Content-Type': 'application/json', // This is REALLY important
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          document.getElementById('response').innerText =
+            JSON.stringify(res);
+        });
+    }
+  </script>
+</html>

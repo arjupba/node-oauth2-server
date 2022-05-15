@@ -33,63 +33,10 @@
       class="btn btn-primary"
       >Login with Oauth Server</a
     >
-
-    <h1>Sign Up</h1>
-    <form onsubmit="useThisToken()" id="formId">
-      <div class="form-group">
-        <label>Name</label>
-        <input
-          class="form-control auth"
-          type="text"
-          name="name"
-          value=""
-        />
-      </div>
-      <div class="form-group">
-        <label>Username</label>
-        <input
-          class="form-control auth"
-          type="text"
-          name="userName"
-          value=""
-        />
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input
-          class="form-control auth"
-          type="text"
-          name="password"
-          value=""
-        />
-      </div>
-      <input
-        type="button"
-        class="btn btn-success"
-        onclick="useThisToken()"
-        value="Sign Up"
-      />
-    </form>
-    <p id="response"></p>
+    <a
+      href="http://localhost:3006/public/registerUser"
+      class="btn btn-primary"
+      >Sign Up</a
+    >
   </body>
-  <script>
-    function useThisToken(data) {
-      const elements = document.getElementById('formId').elements;
-      const name = elements.name.value;
-      const userName = elements.userName.value;
-      const password = elements.password.value;
-      fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, userName, password }),
-        headers: {
-          'Content-Type': 'application/json', // This is REALLY important
-        },
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          document.getElementById('response').innerText =
-            JSON.stringify(res);
-        });
-    }
-  </script>
 </html>
