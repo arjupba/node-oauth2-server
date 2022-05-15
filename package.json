@@ -14,9 +14,12 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "body-parser": "^1.20.0",
+    "bodymen": "1.0.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-oauth-server": "^2.0.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

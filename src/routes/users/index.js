@@ -1,22 +1,38 @@
 import { Router } from 'express';
+import { middleware as body } from 'bodymen';
+import oAuthServer from '../../oauthServer';
+import { createUser, getUsers } from '../../models/users';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  return res.send('Received a GET HTTP method');
+router.get('/', oAuthServer.authenticate(), (req, res) => {
+  return res.send({ ok: true, users: getUsers() });
 });
 
-router.post('/', (req, res) => {
-  console.log(req.body);
-  return res.send('Received a POST HTTP method');
-});
-
-router.put('/', (req, res) => {
-  return res.send('Received a PUT HTTP method');
-});
-
-router.delete('/', (req, res) => {
-  return res.send('Received a DELETE HTTP method');
-});
+router.post(
+  '/',
+  body({
+    name: {
+      type: String,
+      required: true,
+      minlength: 3,
+    },
+    userName: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 3,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 3,
+    },
+  }),
+  ({ bodymen: { body } }, res) => {
+    createUser(body);
+    return res.send({ ok: true, message: 'User created' });
+  },
+);
 
 export default router;
