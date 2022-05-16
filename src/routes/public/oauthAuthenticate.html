@@ -87,7 +87,6 @@
         });
         const error = urlParams.get('success') === 'false';
         if (error) {
-          console.log('error');
           document.body
             .querySelectorAll('.auth')
             .forEach((el) => el.classList.add('is-invalid'));
