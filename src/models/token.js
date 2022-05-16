@@ -13,7 +13,6 @@ export const revokeToken = (accessToken) => {
 };
 
 export const getRefreshToken = (refreshToken) => {
-  console.log(refreshToken, tokenMap);
   const tokenKey = [...tokenMap.entries()]
     .filter(([key, entry]) => entry.refreshToken === refreshToken)
     .map(([k]) => k)[0];

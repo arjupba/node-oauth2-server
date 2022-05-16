@@ -8,7 +8,6 @@ router.post(
   '/authorize',
   (req, res, next) => {
     const { username, password } = req.body;
-    console.log(req.body);
     const user = authenticateUser(username, password);
     if (user) {
       req.body.user = user;
@@ -43,7 +42,6 @@ router.post(
 router.post(
   '/token',
   (req, res, next) => {
-    console.log('token api start');
     next();
   },
   oAuthServer.token({

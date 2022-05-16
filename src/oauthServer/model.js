@@ -13,7 +13,6 @@ import {
 
 const oAuthModel = {
   getClient: (clientId, a) => {
-    console.log(clientId, a);
     /* This is where we access client data */
     return getClient(clientId);
   },
